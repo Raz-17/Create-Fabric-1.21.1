@@ -4,7 +4,6 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.Window;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.simibubi.create.compat.Mods;
-import com.simibubi.create.compat.ftb.FTBIntegration;
 import com.simibubi.create.compat.sodium.SodiumCompat;
 import com.simibubi.create.compat.trinkets.Trinkets;
 import com.simibubi.create.content.contraptions.glue.SuperGlueSelectionHandler;
@@ -85,7 +84,6 @@ public class CreateClient implements ClientModInitializer {
 		ZAPPER_RENDER_HANDLER.registerListeners();
 		POTATO_CANNON_RENDER_HANDLER.registerListeners();
 
-		Mods.FTBLIBRARY.executeIfInstalled(() -> () -> FTBIntegration.init());
 		Mods.SODIUM.executeIfInstalled(() -> () -> SodiumCompat.init());
 
 		// clientInit start
@@ -128,7 +126,6 @@ public class CreateClient implements ClientModInitializer {
 	private static void initCompat() {
 		Mods.TRINKETS.executeIfInstalled(() -> () -> Trinkets.clientInit());
 		Mods.SODIUM.executeIfInstalled(() -> () -> SodiumCompat.init());
-		Mods.FTBCHUNKS.executeIfInstalled(() -> () -> FTBIntegration.init());
 	}
 
 	private static void registerOverlays() {

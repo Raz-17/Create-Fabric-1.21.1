@@ -22,15 +22,11 @@ public class TrainMapEvents {
 		if (mc.level == null)
 			return;
 
-		if (Mods.FTBCHUNKS.isLoaded())
-			FTBChunksTrainMap.tick();
 		if (Mods.JOURNEYMAP.isLoaded())
 			JourneyTrainMap.tick();
 	}
 
 	public static boolean mouseClick(Screen screen, double mouseX, double mouseY, int button) {
-		if (Mods.FTBCHUNKS.isLoaded() && FTBChunksTrainMap.mouseClick(screen, (int) mouseX, (int) mouseY))
-			return false;
 		if (Mods.JOURNEYMAP.isLoaded() && JourneyTrainMap.mouseClick(screen, (int) mouseX, (int) mouseY))
 			return false;
 
@@ -38,17 +34,10 @@ public class TrainMapEvents {
 	}
 
 	public static boolean cancelTooltips(ItemStack stack, PoseStack matrices, int x, int y, int width, int height, Font font, List<ClientTooltipComponent> tooltip) {
-		if (Mods.FTBCHUNKS.isLoaded()) {
-			return FTBChunksTrainMap.cancelTooltips();
-		}
-
 		return false;
 	}
 
 	public static void renderGui(Screen screen, GuiGraphics graphics, double mouseX, double mouseY, float partialTicks) {
-		if (Mods.FTBCHUNKS.isLoaded()) {
-			FTBChunksTrainMap.renderGui(screen, graphics, (int) mouseX, (int) mouseY, partialTicks);
-		}
 	}
 
 	public static void init() {

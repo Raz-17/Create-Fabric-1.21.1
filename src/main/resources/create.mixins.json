@@ -44,8 +44,6 @@
     "accessor.StateHolderAccessor",
     "accessor.SystemReportAccessor",
     "accessor.UseOnContextAccessor",
-    "compat.ftbchunks.LargeMapScreenAccessor",
-    "compat.ftbchunks.RegionMapPanelAccessor",
     "compat.journeymap.MapRendererAccessor",
     "datafixer.BlockPosFormatAndRenamesFixMixin",
     "datafixer.ItemStackComponentizationFixMixin",

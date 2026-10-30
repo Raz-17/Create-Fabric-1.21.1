@@ -133,11 +133,8 @@ dependencies {
     modCompileOnly("dev.onyxstudios.cardinal-components-api:cardinal-components-base:$ccaVersion")
     modCompileOnly("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:$ccaVersion")
 
-    // FIXME - Use gradle.properties for these versions, make change to concealed for this
-    modCompileOnly("dev.architectury:architectury-fabric:9.1.12")
-    modCompileOnly("dev.ftb.mods:ftb-chunks-fabric:2001.3.1")
-    modCompileOnly("dev.ftb.mods:ftb-teams-fabric:2001.3.0")
-    modCompileOnly("dev.ftb.mods:ftb-library-fabric:2001.2.4")
+    // FTB compatibility is disabled for this 1.21.1 build until matching
+    // artifacts are available. The target modpack does not include FTB Chunks.
 
     modCompileOnly("maven.modrinth:journeymap:$jmVersion")
     modCompileOnly("info.journeymap:journeymap-api:$jmApiVersion")
@@ -174,6 +171,11 @@ sourceSets.named("main") {
     resources {
         srcDir("src/generated/resources")
         exclude(".cache/")
+    }
+    java {
+        exclude("com/simibubi/create/compat/ftb/**")
+        exclude("com/simibubi/create/compat/trainmap/FTBChunksTrainMap.java")
+        exclude("com/simibubi/create/foundation/mixin/compat/ftbchunks/**")
     }
 }
 

@@ -358,7 +358,7 @@ public class StationScreen extends AbstractStationScreen {
 	}
 
 	public boolean mapModsPresent() {
-		return Mods.FTBCHUNKS.isLoaded() || Mods.JOURNEYMAP.isLoaded();
+		return Mods.JOURNEYMAP.isLoaded();
 	}
 
 	@Override
